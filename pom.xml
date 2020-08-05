@@ -200,16 +200,16 @@
 			      </configuration>
 			</plugin>
 			<!-- for heroku -->
-  <plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-dependency-plugin</artifactId>
-    <version>3.1.2</version>
-    <executions>
-      <execution>
-        <phase>package</phase>
-        <goals>
-          <goal>copy</goal>
-        </goals>
+			  <plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-dependency-plugin</artifactId>
+			    <version>3.1.2</version>
+			    <executions>
+			      <execution>
+			        <phase>package</phase>
+			        <goals>
+			          <goal>copy</goal>
+			        </goals>
                     <configuration>
                         <artifactItems>
                             <artifactItem>
@@ -220,9 +220,9 @@
                             </artifactItem>
                         </artifactItems>
                     </configuration>
-      </execution>
-    </executions>
-  </plugin>
+			      </execution>
+			    </executions>
+			  </plugin>
 			<plugin>
 				<groupId>com.heroku.sdk</groupId>
 		        <artifactId>heroku-maven-plugin</artifactId>

@@ -19,7 +19,7 @@ import com.toeat.toeat.util.SearchUtil;
 
 
 @Controller
-@RequestMapping("/search")
+@RequestMapping("/")
 public class SearchController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(SearchController.class);
@@ -38,7 +38,7 @@ public class SearchController {
 		return "test/test";
 	}
 
-	@RequestMapping(value = "/", produces="application/json; charset=UTF-8")
+	@RequestMapping(value = "/search", produces="application/json; charset=UTF-8")
 	@ResponseBody
 	public String search(HttpServletRequest request, HttpServletResponse response, 
 			@RequestParam Map<String,Object> param) {
