@@ -38,11 +38,10 @@ public class SearchController {
 		return "test/test";
 	}
 
-	@RequestMapping(value = "/search", produces="application/json; charset=UTF-8")
+	@RequestMapping(value = "/", produces="application/json; charset=UTF-8")
 	@ResponseBody
 	public String search(HttpServletRequest request, HttpServletResponse response, 
 			@RequestParam Map<String,Object> param) {
-		//logger.debug(Arrays.asList(param.get("rect")).get(0).toString());
         return SearchUtil.search(param).toString();
 	}
 }
