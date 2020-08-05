@@ -196,7 +196,7 @@
 	                <archive>
 		                <manifest>
 		                <!-- give full qualified name of your main class-->
-		                	<mainClass>com.javahungry.Demo</mainClass>
+		                	<mainClass>com.toeat.toeat.controller.SearchController</mainClass>
 		                </manifest>
 	                </archive>
                 </configuration>
