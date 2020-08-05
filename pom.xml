@@ -1,11 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-  	<groupId>com.toeat</groupId>
-  	<artifactId>toeat</artifactId>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.toeat</groupId>
+  <artifactId>toeat</artifactId>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
-	<url>http://maven.apache.org</url>
 	<properties>
-		<tomcat.version>9.0.37</tomcat.version>
 		<java-version>1.8</java-version>
 		<org.springframework-version>5.2.8.RELEASE</org.springframework-version>
 		<org.aspectj-version>1.6.10</org.aspectj-version>
@@ -15,32 +13,6 @@
         <webcontent-dir>${project.basedir}/src/main/webapp/WEB-INF/lib</webcontent-dir>
 	</properties>
 	<dependencies>
-		<!-- Tomcat -->
-		<dependency>
-	        <groupId>org.apache.tomcat.embed</groupId>
-	        <artifactId>tomcat-embed-core</artifactId>
-	        <version>${tomcat.version}</version>
-	    </dependency>
-	    <dependency>
-	        <groupId>org.apache.tomcat.embed</groupId>
-	        <artifactId>tomcat-embed-jasper</artifactId>
-	        <version>${tomcat.version}</version>
-	    </dependency>
-	    <dependency>
-	        <groupId>org.apache.tomcat</groupId>
-	        <artifactId>tomcat-jasper</artifactId>
-	        <version>${tomcat.version}</version>
-	    </dependency>
-	    <dependency>
-	        <groupId>org.apache.tomcat</groupId>
-	        <artifactId>tomcat-jasper-el</artifactId>
-	        <version>${tomcat.version}</version>
-	    </dependency>
-	    <dependency>
-	        <groupId>org.apache.tomcat</groupId>
-	        <artifactId>tomcat-jsp-api</artifactId>
-	        <version>${tomcat.version}</version>
-	    </dependency>
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -215,29 +187,7 @@
                     <showDeprecation>true</showDeprecation>
                 </configuration>
             </plugin>
-	        <plugin>
-	            <groupId>org.codehaus.mojo</groupId>
-	            <artifactId>appassembler-maven-plugin</artifactId>
-	            <version>2.0.0</version>
-	            <configuration>
-	                <assembleDirectory>target</assembleDirectory>
-	                <programs>
-	                    <program>
-	                        <mainClass>launch.Main</mainClass>
-	                        <name>webapp</name>
-	                    </program>
-	                </programs>
-	            </configuration>
-	            <executions>
-	                <execution>
-	                    <phase>package</phase>
-	                    <goals>
-	                        <goal>assemble</goal>
-	                    </goals>
-	                </execution>
-	            </executions>
-	        </plugin>
-    		<plugin>
+ 			 <plugin>
 			      <groupId>org.codehaus.mojo</groupId>
 			      <artifactId>tomcat-maven-plugin</artifactId>
 			      <version>1.1</version>
@@ -248,14 +198,9 @@
 			</plugin>
 			<plugin>
 				<groupId>com.heroku.sdk</groupId>
-			       <artifactId>heroku-maven-plugin</artifactId>
-			       <version>3.0.3</version>
-				<configuration>
-				  <processTypes>
-				     <web>java $JAVA_OPTS -cp target/classes:target/dependency/* Main</web>
-				  </processTypes>
-				</configuration>
-			   </plugin>
+		        <artifactId>heroku-maven-plugin</artifactId>
+		        <version>3.0.3</version>
+		    </plugin>
         </plugins>
     </build>
 </project>
