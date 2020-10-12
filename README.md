@@ -1,2 +1,2 @@
 # eatwhatever
-spring server for "toEat"
+spring server for "toEat" repository
